@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>番茄小说网-番茄小说_免费小说阅读_都市言情玄幻小说</title>
+<meta name="description" content="番茄小说网是面向小说阅读爱好者的信息与导航页面，围绕番茄小说、免费小说阅读、都市言情、玄幻修仙、悬疑灵异、历史军事等题材展开，说明作品分类方式、筛选思路、阅读习惯建议、客户端使用注意事项与常见问题，帮助读者理清番茄小说网相关内容，选择适合自己的阅读方向。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%23e8452c'/%3E%3Cpath%20d='M32%2014c-8%200-13%206-13%2013%200%209%2013%2023%2013%2023s13-14%2013-23c0-7-5-13-13-13z'%20fill='%23fff'/%3E%3Cpath%20d='M32%2020c-1%204-1%207%200%2010%202-1%204-4%205-7-2-2-3-3-5-3z'%20fill='%23e8452c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1f1a17;
+  --ink-soft:#4b423c;
+  --muted:#7a6d64;
+  --paper:#fbf6ef;
+  --paper-2:#f4ece1;
+  --line:#e2d5c6;
+  --tomato:#e8452c;
+  --tomato-deep:#b92f1b;
+  --leaf:#3f7d4f;
+  --leaf-soft:#e9f1e8;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.75;
+}
+a{color:var(--tomato-deep);text-decoration:none;}
+a:hover{text-decoration:underline;}
+img{max-width:100%;}
+.wrap{width:min(1140px,92%);margin:0 auto;}
+
+/* 顶部 */
+.topbar{
+  background:var(--paper-2);
+  border-bottom:1px solid var(--line);
+  font-size:13px;
+  color:var(--muted);
+}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:6px 0;flex-wrap:wrap;}
+.site-head{
+  background:#fff;
+  border-bottom:3px solid var(--tomato);
+}
+.site-head .wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:14px 0;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{
+  width:46px;height:46px;border-radius:12px;background:var(--tomato);
+  display:grid;place-items:center;color:#fff;font-size:22px;font-weight:700;
+  flex:0 0 auto;
+}
+.brand-text strong{display:block;font-size:20px;letter-spacing:.5px;}
+.brand-text span{font-size:12px;color:var(--muted);letter-spacing:1px;}
+.main-nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;flex-wrap:wrap;}
+.main-nav a{
+  display:inline-block;padding:7px 13px;border-radius:20px;
+  color:var(--ink-soft);font-size:14px;
+}
+.main-nav a:hover{background:var(--leaf-soft);color:var(--leaf);text-decoration:none;}
+
+/* 首屏 */
+.hero{
+  background:
+    radial-gradient(circle at 88% 18%,rgba(232,69,44,.12),transparent 42%),
+    radial-gradient(circle at 8% 82%,rgba(63,125,79,.12),transparent 40%),
+    #fff;
+  border-bottom:1px solid var(--line);
+  padding:44px 0 40px;
+}
+.hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:36px;align-items:start;}
+.hero-kicker{
+  display:inline-block;font-size:12px;letter-spacing:2px;color:var(--tomato-deep);
+  background:#fdeae6;border-radius:4px;padding:3px 10px;margin-bottom:14px;
+}
+.hero h1{
+  font-size:clamp(26px,4vw,40px);
+  line-height:1.3;margin:0 0 14px;letter-spacing:.5px;
+}
+.hero h1 em{font-style:normal;color:var(--tomato);}
+.tagline{
+  font-size:17px;color:var(--ink-soft);margin:0 0 20px;max-width:38em;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  display:inline-block;padding:11px 22px;border-radius:6px;font-size:15px;
+  border:1px solid transparent;transition:.2s;
+}
+.btn-primary{background:var(--tomato);color:#fff;}
+.btn-primary:hover{background:var(--tomato-deep);text-decoration:none;}
+.btn-ghost{border-color:var(--line);color:var(--ink-soft);background:#fff;}
+.btn-ghost:hover{border-color:var(--tomato);color:var(--tomato-deep);text-decoration:none;}
+
+.hero-aside{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:10px;
+  padding:20px 22px;
+}
+.hero-aside h2{font-size:15px;margin:0 0 12px;color:var(--tomato-deep);letter-spacing:1px;}
+.hero-aside ul{list-style:none;margin:0;padding:0;}
+.hero-aside li{
+  font-size:14px;color:var(--ink-soft);padding:8px 0 8px 20px;
+  border-bottom:1px dashed var(--line);position:relative;
+}
+.hero-aside li:last-child{border-bottom:0;}
+.hero-aside li::before{
+  content:"";position:absolute;left:0;top:16px;width:8px;height:8px;
+  background:var(--leaf);border-radius:50%;
+}
+
+/* 主体结构 */
+main{padding:44px 0 20px;}
+.block{margin-bottom:52px;}
+.block-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:22px;flex-wrap:wrap;}
+.block-head h2{font-size:22px;margin:0;letter-spacing:.5px;}
+.block-head .num{
+  font-size:13px;color:var(--tomato);font-weight:700;letter-spacing:2px;
+  border:1px solid var(--tomato);border-radius:4px;padding:1px 7px;
+}
+.block-head p{margin:0;font-size:13px;color:var(--muted);}
+
+.prose p{margin:0 0 16px;color:var(--ink-soft);}
+
+/* 分类清单 */
+.genre-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.genre{
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--tomato);
+  border-radius:6px;padding:16px 18px;
+}
+.genre h3{font-size:16px;margin:0 0 6px;}
+.genre h3 span{font-size:12px;color:var(--muted);font-weight:400;margin-left:6px;}
+.genre p{margin:0;font-size:14px;color:var(--ink-soft);}
+.genre:nth-child(3n+2){border-left-color:var(--leaf);}
+.genre:nth-child(3n){border-left-color:#c98a2b;}
+
+/* 筛选维度 */
+.filter-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:14.5px;}
+.filter-table th,.filter-table td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;}
+.filter-table th{background:var(--paper-2);font-weight:600;color:var(--ink);width:22%;}
+.filter-table tr:last-child td,.filter-table tr:last-child th{border-bottom:0;}
+.filter-table td{color:var(--ink-soft);}
+
+/* 阅读步骤 */
+.steps{list-style:none;margin:0;padding:0;counter-reset:step;}
+.steps li{
+  counter-increment:step;position:relative;padding:0 0 22px 56px;
+  border-left:2px dashed var(--line);margin-left:18px;
+}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0;}
+.steps li::before{
+  content:counter(step);position:absolute;left:-18px;top:0;
+  width:36px;height:36px;border-radius:50%;background:var(--tomato);color:#fff;
+  display:grid;place-items:center;font-weight:700;font-size:15px;
+}
+.steps h3{font-size:16px;margin:4px 0 6px;}
+.steps p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+/* 双栏：提示 + 问答共用 */
+.two-col{display:grid;grid-template-columns:1.35fr 1fr;gap:30px;align-items:start;}
+
+/* 注意事项 */
+.notice{
+  background:var(--leaf-soft);border:1px solid #cfe0cd;border-radius:8px;padding:20px 22px;
+}
+.notice h3{font-size:16px;margin:0 0 10px;color:var(--leaf);}
+.notice ul{margin:0;padding-left:20px;font-size:14.5px;color:var(--ink-soft);}
+.notice li{margin-bottom:8px;}
+.notice li:last-child{margin-bottom:0;}
+
+/* 客户端说明 */
+.client-box{
+  background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;
+}
+.client-box h3{font-size:16px;margin:0 0 10px;}
+.client-box ul{list-style:none;margin:0;padding:0;font-size:14.5px;color:var(--ink-soft);}
+.client-box li{padding:7px 0 7px 18px;position:relative;border-bottom:1px dashed var(--line);}
+.client-box li:last-child{border-bottom:0;}
+.client-box li::before{content:"▪";position:absolute;left:0;color:var(--tomato);}
+
+/* FAQ */
+.faq details{
+  background:#fff;border:1px solid var(--line);border-radius:6px;
+  margin-bottom:10px;padding:0 18px;
+}
+.faq details[open]{border-color:var(--tomato);}
+.faq summary{
+  cursor:pointer;padding:14px 0;font-size:15.5px;font-weight:600;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";color:var(--tomato);font-size:20px;line-height:1;}
+.faq details[open] summary::after{content:"−";}
+.faq details p{margin:0 0 16px;font-size:14.5px;color:var(--ink-soft);}
+
+/* CTA */
+.cta{
+  background:var(--tomato);color:#fff;border-radius:10px;padding:32px 30px;
+  margin-bottom:52px;
+}
+.cta h2{margin:0 0 10px;font-size:22px;}
+.cta p{margin:0 0 18px;color:#ffe6e0;font-size:15px;}
+.cta .btn-ghost{background:transparent;border-color:#fff;color:#fff;}
+.cta .btn-ghost:hover{background:#fff;color:var(--tomato-deep);}
+
+/* 页脚 */
+footer{
+  background:#22194f0a;
+  background:#2a221d;color:#d9cfc6;padding:34px 0 20px;font-size:14px;
+}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr;gap:30px;}
+footer h3{color:#fff;font-size:15px;margin:0 0 10px;}
+footer p{margin:0 0 10px;color:#bcb1a7;line-height:1.8;}
+footer ul{list-style:none;margin:0;padding:0;}
+footer li{margin-bottom:6px;}
+footer a{color:#e9d5cc;}
+.footer-bottom{
+  margin-top:24px;padding-top:14px;border-top:1px solid #40352e;
+  text-align:center;font-size:12.5px;color:#9a8e84;
+}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;}
+  .genre-list{grid-template-columns:repeat(2,1fr);}
+  .two-col{grid-template-columns:1fr;}
+  footer .wrap{grid-template-columns:1fr;}
+}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .site-head .wrap{padding:12px 0;}
+  .main-nav ul{gap:2px;}
+  .main-nav a{padding:6px 10px;font-size:13px;}
+  .hero{padding:30px 0;}
+  .genre-list{grid-template-columns:1fr;}
+  .filter-table th{width:34%;}
+  .filter-table th,.filter-table td{padding:10px;}
+  .steps li{padding-left:48px;}
+  .cta{padding:24px 20px;}
+  .block{margin-bottom:40px;}
+  footer .wrap{gap:18px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>小说阅读信息与选书参考 · 内容整理页面</span>
+    <span>题材分类 · 筛选思路 · 阅读习惯 · 常见问题</span>
+  </div>
+</div>
+
+<header class="site-head">
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-mark">番</div>
+      <div class="brand-text">
+        <strong>番茄小说网</strong>
+        <span>小说阅读参考 · 题材分类导航</span>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <ul>
+        <li><a href="#intro">主题概述</a></li>
+        <li><a href="#genre">题材分类</a></li>
+        <li><a href="#filter">筛选维度</a></li>
+        <li><a href="#flow">阅读步骤</a></li>
+        <li><a href="#notice">注意事项</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="hero-kicker">NOVEL READING GUIDE</span>
+        <h1>番茄小说网：从题材分类到选书思路的<em>小说阅读参考</em></h1>
+        <p class="tagline">围绕番茄小说网相关搜索，整理题材分类、筛选维度、阅读节奏与客户端使用常识，帮助读者快速判断该读什么、怎么看、注意什么。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#genre">查看题材分类</a>
+          <a class="btn btn-ghost" href="#faq">阅读常见问题</a>
+        </div>
+      </div>
+      <aside class="hero-aside">
+        <h2>本页能帮你回答</h2>
+        <ul>
+          <li>番茄小说网相关内容大致分哪几类题材</li>
+          <li>怎样按字数、状态、题材筛出想读的书</li>
+          <li>免费阅读与付费阅读的区别怎么看</li>
+          <li>阅读过程中的护眼、防沉迷与账号安全</li>
+          <li>遇到断更、烂尾、同质化该怎么处理</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <section class="block" id="intro">
+      <div class="block-head">
+        <span class="num">01</span>
+        <h2>番茄小说网是什么：先弄清主题再谈阅读</h2>
+      </div>
+      <div class="prose">
+        <p>很多读者第一次搜索番茄小说网，其实并不确定自己要找的到底是什么。有人想找免费小说，有人想了解都市言情、玄幻修仙等题材都有哪些常见套路，也有人只是想确认客户端和网页端在阅读体验上的差异。本页不作为任何应用的官方入口，而是把番茄小说网相关的内容按“分类—筛选—阅读—问题”四个层次重新梳理，方便你在较短时间内建立整体认识。</p>
+        <p>从内容形态看，番茄小说网这类平台以网络长篇小说为主，作品通常按题材、字数、连载状态和阅读热度组织。题材大致覆盖都市、言情、玄幻、仙侠、悬疑、历史、科幻、校园等方向；状态上分为连载中与已完结；篇幅从几十万字的短篇到数百万字的长篇都有。理解这些基础维度之后，再看番茄小说网上的各类榜单和推荐，就不容易被单一标签带偏。</p>
+        <p>从阅读习惯看，网络小说的节奏与现代生活高度相关。通勤、睡前、周末整块时间，适合的作品类型并不相同。短篇或已完结作品适合追求完整结局的读者，连载作品适合愿意追更、喜欢讨论的读者。围绕番茄小说网展开的选书讨论，核心往往不是“哪本最好”，而是“哪本适合现在这个场景”。本页后续栏目会围绕这一判断展开。</p>
+      </div>
+    </section>
+
+    <section class="block" id="genre">
+      <div class="block-head">
+        <span class="num">02</span>
+        <h2>题材分类：番茄小说网常见内容方向一览</h2>
+        <p>按读者最常搜索的方向整理，不涉及具体作品评价</p>
+      </div>
+      <div class="genre-list">
+        <div class="genre">
+          <h3>都市生活<span>现实向</span></h3>
+          <p>以现代城市为背景，常围绕职场、家庭、成长与情感展开。节奏相对日常，适合碎片化阅读。</p>
+        </div>
+        <div class="genre">
+          <h3>现代言情<span>情感线</span></h3>
+          <p>情感推进是主线，常见契约、重逢、双向暗恋等结构。阅读时关注人物动机是否立得住。</p>
+        </div>
+        <div class="genre">
+          <h3>玄幻修仙<span>世界观</span></h3>
+          <p>强调境界设定与升级体系，篇幅普遍偏长。新手可先看前几十章判断设定是否对胃口。</p>
+        </div>
+        <div class="genre">
+          <h3>悬疑灵异<span>推理向</span></h3>
+          <p>依靠悬念推进，阅读时更看重逻辑闭环。适合能连续阅读、愿意跟着线索推理的读者。</p>
+        </div>
+        <div class="genre">
+          <h3>历史军事<span>架空与写实</span></h3>
+          <p>分为架空军政与历史背景两类，设定密度较高，常需要读者对时代背景有一定了解。</p>
+        </div>
+        <div class="genre">
+          <h3>科幻未来<span>设定流</span></h3>
+          <p>以科技、末日、星际等设定为核心，世界观解释是否自洽是判断可读性的关键点。</p>
+        </div>
+        <div class="genre">
+          <h3>校园青春<span>成长向</span></h3>
+          <p>聚焦校园生活与青春情绪，篇幅通常适中，适合作为入门题材或换口味的选择。</p>
+        </div>
+        <div class="genre">
+          <h3>短篇与完结<span>完整阅读</span></h3>
+          <p>追求完整故事线的读者可以优先关注已完结作品，减少追更中断带来的阅读落差。</p>
+        </div>
+        <div class="genre">
+          <h3>多题材混合<span>跨界向</span></h3>
+          <p>如都市加玄幻、悬疑加言情，标签叠加明显。阅读前先确认主线类型，避免预期错位。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="filter">
+      <div class="block-head">
+        <span class="num">03</span>
+        <h2>筛选维度：在番茄小说网相关内容里做选择</h2>
+        <p>把“随便看看”变成可执行的判断标准</p>
+      </div>
+      <div class="prose" style="margin-bottom:18px;">
+        <p>面对大量作品，最有效的方式不是逐个翻，而是先确定两三个硬性条件，再用软性条件微调。番茄小说网相关内容数量多、更新节奏快，如果没有筛选标准，很容易出现“看了几十章才发现不合口味”的情况。下面这张表把常见维度拆开，便于你按需组合。</p>
+      </div>
+      <table class="filter-table">
+        <tbody>
+          <tr>
+            <th>题材方向</th>
+            <td>先锁定一到两个主题材，例如都市或玄幻。题材越明确，后续筛选成本越低；若只是消遣，可保留一个备选题材用于切换。</td>
+          </tr>
+          <tr>
+            <th>连载状态</th>
+            <td>希望一口气读完，优先选已完结；愿意追更、喜欢参与讨论，可选连载中。追更作品需要接受更新节奏不确定。</td>
+          </tr>
+          <tr>
+            <th>篇幅长短</th>
+            <td>百万字以上适合长期阅读，但前期铺垫较长；几十万字作品进入主线更快，适合通勤或短周期阅读。</td>
+          </tr>
+          <tr>
+            <th>文风与节奏</th>
+            <td>通过试读前几章判断：叙述偏细腻还是偏爽快，对话多还是描写多。文风不合是最常见的弃书原因。</td>
+          </tr>
+          <tr>
+            <th>主角设定</th>
+            <td>关注主角性格、成长路径与行为逻辑是否自洽。设定讨喜不等于写得好，关键看后续是否稳定。</td>
+          </tr>
+          <tr>
+            <th>阅读成本</th>
+            <td>免费章节、付费章节、广告解锁等模式各有差异，阅读前留意章节标记，合理规划阅读预算与时间。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="block" id="flow">
+      <div class="block-head">
+        <span class="num">04</span>
+        <h2>阅读步骤：从搜索到稳定追更的完整路径</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>明确阅读目的</h3>
+          <p>先问自己是打发时间、寻找情绪共鸣，还是想读完整故事。目的不同，对番茄小说网相关内容的期待就不同，也决定你该看短篇还是长篇。</p>
+        </li>
+        <li>
+          <h3>确定题材与状态</h3>
+          <p>用题材加连载状态两个条件缩小范围。例如“都市 + 已完结”或“玄幻 + 连载中”，比单纯浏览榜单更高效。</p>
+        </li>
+        <li>
+          <h3>试读前十章</h3>
+          <p>前十章通常能看出设定是否清晰、人物是否立得住、节奏是否拖沓。试读阶段不要急着投入大量时间。</p>
+        </li>
+        <li>
+          <h3>检查更新与篇幅</h3>
+          <p>追更作品要看最近更新时间与章节总量，避免读到关键处中断。已完结作品则关注结尾评价是否稳定。</p>
+        </li>
+        <li>
+          <h3>建立自己的书单</h3>
+          <p>把想读、在读、弃读分开记录，标注弃读原因。长期积累后，你会更清楚番茄小说网相关内容里哪些类型真正适合自己。</p>
+        </li>
+        <li>
+          <h3>控制阅读节奏</h3>
+          <p>设定每日阅读时长，避免熬夜连续阅读。阅读是放松方式，不应挤占休息与工作学习时间。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block" id="notice">
+      <div class="block-head">
+        <span class="num">05</span>
+        <h2>注意事项：阅读体验与账号安全</h2>
+      </div>
+      <div class="two-col">
+        <div class="notice">
+          <h3>阅读过程中值得留意的点</h3>
+          <ul>
+            <li>对“全网独家”“永久免费”等表述保持谨慎，具体权益以应用内实际页面说明为准。</li>
+            <li>不要在非官方渠道输入账号密码，避免账号被盗或信息泄露。</li>
+            <li>遇到要求额外付费解锁的页面，先确认是否为应用内正常流程。</li>
+            <li>长时间阅读注意用眼间隔，开启护眼或夜间模式可减轻疲劳。</li>
+            <li>未成年人阅读应在监护人指导下进行，合理安排时长。</li>
+          </ul>
+        </div>
+        <div class="client-box">
+          <h3>客户端与网页端使用常识</h3>
+          <ul>
+            <li>客户端通常提供书架、阅读进度同步与离线缓存等功能。</li>
+            <li>网页端适合临时阅读，功能完整度可能因版本而异。</li>
+            <li>登录同一账号后，阅读记录一般可以跨设备延续。</li>
+            <li>清理缓存前确认已同步进度，避免记录丢失。</li>
+            <li>应用更新后界面可能调整，以实际版本为准。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="faq">
+      <div class="block-head">
+        <span class="num">06</span>
+        <h2>常见问题：关于番茄小说网的高频疑问</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>番茄小说网是免费阅读平台吗？</summary>
+          <p>这类平台通常同时存在免费章节与付费章节，具体以作品页面标注为准。不同作品、不同章节的开放策略可能不同，阅读前留意章节标记即可。本页不对任何具体作品的收费情况作出承诺。</p>
+        </details>
+        <details>
+          <summary>怎样判断一本小说是否适合自己？</summary>
+          <p>最直接的方法是试读前十章，观察设定是否清晰、人物动机是否合理、节奏是否符合你的习惯。如果前十章仍让你频繁出戏，通常说明题材或文风不匹配，及时换书比硬读更划算。</p>
+        </details>
+        <details>
+          <summary>连载中的作品断更了怎么办？</summary>
+          <p>可以先查看最近更新时间与作者说明。若长时间未更新，可暂时移出追更列表，转读已完结作品。把追更作品与完结作品分开管理，能减少等待带来的阅读挫败感。</p>
+        </details>
+        <details>
+          <summary>同一题材的作品为什么差别很大？</summary>
+          <p>题材只是分类标签，真正决定阅读体验的是人物塑造、叙事节奏和设定自洽程度。同样是都市题材，有的偏重情感，有的偏重职场成长。阅读时关注主线类型，避免被单一标签误导。</p>
+        </details>
+        <details>
+          <summary>阅读记录会保存在哪里？</summary>
+          <p>通常与登录账号绑定，换设备登录同一账号后可继续阅读。未登录状态下产生的记录可能只保存在本地，清理缓存或更换设备后可能丢失，建议阅读前先完成登录。</p>
+        </details>
+        <details>
+          <summary>长时间阅读需要注意什么？</summary>
+          <p>建议每阅读一段时间起身活动、远眺放松，夜间使用深色或护眼模式。把阅读时间安排在固定时段，避免影响睡眠。网络小说篇幅长，合理分配时间比追求阅读速度更重要。</p>
+        </details>
+        <details>
+          <summary>如何避免遇到盗版或仿冒页面？</summary>
+          <p>通过正规应用商店获取客户端，不轻信来源不明的下载链接，不在陌生页面输入账号密码。遇到界面粗糙、频繁弹窗、要求额外授权的页面应提高警惕，及时退出。</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>从题材出发，建立自己的阅读判断</h2>
+      <p>番茄小说网相关内容数量庞大，与其追着榜单跑，不如先想清楚自己想读什么。用题材、状态、篇幅三个条件缩小范围，再通过试读确认文风，阅读效率会明显提高。</p>
+      <a class="btn btn-ghost" href="#genre">回到题材分类</a>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>关于本页</h3>
+      <p>本页围绕番茄小说网相关搜索整理题材分类、筛选维度、阅读步骤与常见问题，属于信息整理与阅读参考内容，不提供作品下载，也不代表任何应用的官方立场。具体功能、收费与内容以应用内实际展示为准。</p>
+      <p>阅读是个人化的选择，本页提供的是判断方法而非固定答案。建议结合实际试读体验，形成适合自己的选书标准。</p>
+    </div>
+    <div>
+      <h3>快速导航</h3>
+      <ul>
+        <li><a href="#intro">主题概述</a></li>
+        <li><a href="#genre">题材分类</a></li>
+        <li><a href="#filter">筛选维度</a></li>
+        <li><a href="#flow">阅读步骤</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">番茄小说网 · 小说阅读参考页面 · 内容仅供阅读选书参考</div>
+</footer>
+
+</body>
+</html>
